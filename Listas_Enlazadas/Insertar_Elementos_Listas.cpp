@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 struct Nodo{
 
     int dato;
@@ -17,15 +19,11 @@ void InsertarALista(Nodo *&lista,int n)
 {
 
     Nodo *nuevo_nodo=new Nodo();
-    nuevo_nodo->dato=n;
+    nuevo_nodo->dato=n; 
 
     Nodo *aux1=lista;//aux1 ->null y lista ->null
     Nodo *aux2;
 
-    //tambien esto nos sirve para agregar los elementos ordenadamente a la lista
-    lista=nuevo_nodo;//ahora la lista apunta al nuevo nodo lista-> n que es el dato que queremos insertar
-    //ahora pasamos a aux1 a null
-    nuevo_nodo->siguiente=aux1;// y ahora el nuevo nodo lo pasamos a siguiente que seria null
 
     //ejemplo: si la lista solo tiene un elemento y es 5 y el nuevo nodo es 3
     //ahora la lista apunta al nuevo nodo lista-> n que es el dato que queremos insertar
@@ -71,9 +69,32 @@ void InsertarALista(Nodo *&lista,int n)
     }else{//si este else se cumple, significa que el elemento que queremos insertar es mayor al primer elemento de la lista
         //por ende si se cumple esto significa que ha entrado al while y el nuevo nodo se insertara entre los nodos de la lista
         aux2->siguiente=nuevo_nodo;
+        //lista y aux2 -> |5| nuevo_nodo-> |7| aux1 -> null
        
     }
     nuevo_nodo->siguiente=aux1;
 
+    cout<<"\t Elemento "<<n<< " insertado correctamente "<<endl;
 
+
+}
+
+int main(){
+
+  Nodo *lista=nullptr;
+  int dato;
+
+  cout<<"Ingrese un numero: ";
+  cin>>dato;
+  InsertarALista(lista,dato);
+
+  cout<<"Ingrese un numero: ";
+  cin>>dato;
+  InsertarALista(lista,dato);
+
+  cout<<"Ingrese un numero: ";
+  cin>>dato;
+  InsertarALista(lista,dato);
+
+    return 0;
 }

@@ -1,19 +1,21 @@
+//para insertar elementos en una cola, hay q seguir 3 pasos
+
+//1. crear espacio en memoria para el nuevo nodo
+//2. asignar ese nuevo nodo al dato que queremos insertar 
+//3. asignar los punteros frente  y fin hacia el nuevo nodo
+
 #include <iostream>
-
-//para insertar elementos en una cola, se siguen 3 pasos
-
-//1. crear un espacio en memeoria para almacenar un nodo
-//2. asignar ese nuevo nodo al dato que queremos insertar
-//3. asginar los punteros frente y fin hacia el nuevo nodo
+#include <stdlib.h>
 using namespace std;
-struct Nodo{
 
+struct Nodo
+{
+    
     int dato;
     Nodo *siguiente;
 
 };
-    
-//aqui ya no es por referencia, porque ya no se va a modificar el puntero frente, solo se va a leer
+
 bool ColaVacia(Nodo *frente)
 {
 
@@ -42,19 +44,4 @@ void InsertarCola(Nodo *&frente, Nodo *&fin, int n)
 
     cout<<"Elemento "<<n<<" insertado a la cola correctamente."<<endl;
 
-}
-
-
-int main(){
-
-    Nodo *frente=nullptr;
-    Nodo *fin=nullptr;
-    int dato;
-
-
-    cout<<"Digitte un numero: ";
-    cin>>dato;
-    InsertarCola(frente,fin,dato);
-
-    return 0;
 }
