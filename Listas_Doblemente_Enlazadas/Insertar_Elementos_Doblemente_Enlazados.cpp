@@ -21,36 +21,34 @@ void Insertar(Nodo *&lista, int n)
 
     Nodo *nuevo_nodo=new Nodo();
     nuevo_nodo->dato=n;
-    nuevo_nodo->siguiente=nullptr;
-    nuevo_nodo->anterior=nullptr;
 
-    Nodo *auxiliar=lista;
-    Nodo *auxiliar2;
+    Nodo *aux1=lista;
+    Nodo *aux2;
 
-    while((auxiliar!=nullptr)&&(auxiliar->dato<n))
+    while((aux1!=nullptr)&&(aux1->dato<n))
     {
 
-        auxiliar2=auxiliar;
-        auxiliar=auxiliar->siguiente;
+        aux2=aux1;
+        aux1=aux1->siguiente;
 
     }
-    if(lista==auxiliar)
+    if(lista==aux1)
     {
 
         lista=nuevo_nodo;
 
     }else{
 
-        auxiliar2->siguiente=nuevo_nodo;
-        nuevo_nodo->anterior=auxiliar2;
+        aux2->siguiente=nuevo_nodo;
+        nuevo_nodo->anterior=aux2;
 
     }
-    nuevo_nodo->siguiente=auxiliar;
+    nuevo_nodo->siguiente=aux1;
 
-    if(auxiliar!=nullptr)
+    if(aux1!=nullptr)
     {
 
-        auxiliar->anterior=nuevo_nodo;
+        aux1->anterior=nuevo_nodo;
 
     }
 
@@ -83,7 +81,7 @@ void Menu()
 
     do {
 
-        cout << "Digite un nimero: ";
+        cout << "Digite un numero: ";
         cin >> dato;
         Insertar(lista, dato);
 

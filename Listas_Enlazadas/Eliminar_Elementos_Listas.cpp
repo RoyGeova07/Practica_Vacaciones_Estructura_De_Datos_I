@@ -18,6 +18,28 @@ void Insertar(Nodo *&lista,int n)
     Nodo *aux1=lista;
     Nodo *aux2;
 
+    //ahora vamos a insertar el primer elemento, por ahora la lista esta vacia va
+    //quiero insertar 10 en la lista vacia, bueno primero verifica si aux1 es diferente de null, y no 
+    //no es diferente de null por ende no entra al while, y pasa por la condicional donde verifica si 
+    //lista y aux1 son iguales.
+
+    //ahora quiero insertar  5 con la lista que ya no esta vaica porque ya tiene el 10, por ende aux1 que 
+    //apuntaba a null, ahora apunta a lista, vuelve al ciclo, ahora esta asi =  lista y aux1 -> |10| -> null
+    //como estamos insertando los elementos ordenados usaremos este while, aqui moveremos los punteros 
+    //el nuevo_nodo q quiero insertar es el 5, como es menor que 10 debe ir al inicio de la lista 
+    //aux1 es diferente de null?, si es diferente de null, y aux1 que es 10 es menor que 5? 10 no es menor que 5
+    //por lo tanto no entra al while
+
+    //ahora quiero insertar el 12 la lista esta asi lista y aux1 -> |10| -> null, comprobemos si entra a ciclo
+    //aux1 es diferente de null? si, si es diferente de null y 10 es menor que 12?, si, si es menor q 12
+    //por lo tanto entra al bucle , aux2 es igual a aux1 y aux1 lo corremos al siguiente. Quedaria asi
+    // pasa de esto lista y aux1 -> |10| -> null a esto lista y aux2 -> 10 aux1-> null, y nuevamente recorre
+    // el while aux1 es diferente de null? no aux1 ya es null, por lo tanto sale del while, por lo tanto queda
+    //aux2 y aux1, por lo tanto el 12 va a ir en medio de aux2 y aux1, como queremos incluir el nuevo_nodo que es 12
+    //despues del 10 para que nos quede la lista en forma ordenada, lo ponemos gracias al aux2, aux2 siguiente
+    // es igual a nuevo_nodo que es 12 y nuevo_nodo siguiente es igual a aux1, osea aux1 apunta ahora a null
+    // por lo tanto quedaria asi lista y aux2 -> 10 -> nuevo_nodo -> 12 -> aux1 -> null
+
     while((aux1!=nullptr)&&(aux1->dato<n))
     {
 
@@ -25,17 +47,23 @@ void Insertar(Nodo *&lista,int n)
         aux1=aux1->siguiente;
 
     }
-    if(lista==aux1)
+    // si la lista y aux1 son iguales, lista se igual al nuevo_nodo, por ende lista ahora apunta al dato
+    if(lista==aux1)//sigamos con el 5, 
     {
-
-        lista=nuevo_nodo;
-
+//                                                                     _
+        lista=nuevo_nodo;//lista es igual a 5 = lista y nuevo_nodo -> |5| 
+ 
     }else{
 
         aux2->siguiente=nuevo_nodo;
 
     }
-    nuevo_nodo->siguiente=aux1;
+    nuevo_nodo->siguiente=aux1;//y nuevo nodo se mueve al siguiente paso, en  este caso como no hay 
+    //nada es null y por ende a aux1 es igual a null
+
+    //esto siempre se cumplira = lista y nuevo_nodo -> |5| aux1 -> |10| -> null
+    //como son variables locales cuando la funcion termine, estas variables se eliminaran 
+    // por lo tanto la lista quedara asi = lista -> |5| -> |10| -> null
 
 }
 
@@ -48,7 +76,7 @@ void MostrarLista(Nodo *lista)
     if(actual==nullptr)
     {
 
-        cout<<"\n La lista esa vacia"<<endl;
+        cout<<"\nLa lista esa vacia"<<endl;
         return;
 
     }
