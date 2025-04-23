@@ -61,6 +61,28 @@ bool EsPalindromo(Nodo *lista)
 
 }   
 
+void Revertir(Nodo*&lista)
+{
+
+
+    Nodo*actual=lista;
+    Nodo*anterior=nullptr;
+    Nodo*siguiente=nullptr;
+    while (actual!=nullptr)
+    {
+        
+        siguiente=actual->siguiente;
+        actual->siguiente=anterior;
+        anterior=actual;
+        actual=siguiente;
+
+    }
+    lista=anterior; 
+    
+
+
+}
+
 int main()
 {
 

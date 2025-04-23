@@ -38,21 +38,21 @@ void InsertarNodo(Nodo*&arbol,int n)
     {
 
         Nodo *nuevo_nodo=CrearNodo(n);
-        Arbol=nuevo_nodo;
+        arbol=nuevo_nodo;
 
     }else{//Si el nodo tiene uno o mas de un nodo 
 
         //obtenemos el valor de la raiz
-        int ValorRaiz=Arbol->dato;
+        int ValorRaiz=arbol->dato;
 
         if(n<ValorRaiz)//si el elemento que queremos insertar es menor que el valor de la raiz, se insertara al lado izquierdoo
         {
 
-            InsertarNodo(Arbol->izquierdo,n);//recurisividaddd ;)
+            InsertarNodo(arbol->izquierdo,n);//recurisividaddd ;)
 
         }else{//si el elemento es mayor a la raiz, insertamos en derecho
 
-            InsertarNodo(Arbol->derecho,n);
+            InsertarNodo(arbol->derecho,n);
 
         }
 
