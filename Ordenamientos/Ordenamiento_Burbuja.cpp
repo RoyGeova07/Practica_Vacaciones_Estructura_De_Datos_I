@@ -11,23 +11,37 @@ using namespace std;
 
 int main(){
 
-    int numeros[]={4,1,2,3,5};
+    
+
+    int nu[30];
+    int cantidad;
+
+    cout<<"Cantidad que va a ingresar en el arreglo: \n";
+    cin>>cantidad;
+    for (int i = 0; i < cantidad; i++)
+    {
+        
+        cout<<"["<<i<<"]"<<" Ingrese un elemento: \n";
+        cin>>nu[i];
+
+    }
+    
 
     int aux;
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < cantidad; i++)
     {
         
-        for (int j = 0; j < 5; j++)
+        for (int j = 0; j < cantidad; j++)
         {
                         //siguiente
-            if(numeros[j]>numeros[j+1])
+            if(nu[j]>nu[j+1])
             {
 
                 //aqui intercambio con aux
-                aux=numeros[j];
-                numeros[j]=numeros[j+1];
-                numeros[j+1]=aux; 
+                aux=nu[j];
+                nu[j]=nu[j+1];
+                nu[j+1]=aux; 
 
             }
 
@@ -37,10 +51,10 @@ int main(){
     }
 
     cout<<"Muestra Ascendente\n";
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < cantidad; i++)
     {
         
-        cout<<numeros[i]<<" ";
+        cout<<nu[i]<<" ";
 
     }
     

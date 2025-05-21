@@ -28,13 +28,15 @@ void AgregarPila(Nodo *&Pila,int n)
     Nodo *nuevo_nodo=new Nodo();
 
     //ahora cargamo el valor dentro del nodo
-    nuevo_nodo->dato=n;
+    nuevo_nodo->dato=n; 
 
-    //ahora cargamos el puntero pila dentro del nodo siguiente
+    //ahora cargamos el puntero pila dentro del nodo siguiente  // pila=nullptr 
+    //esto se representa graficamente asi nuevo_nodo->[10]->siguiente=nullptr
     nuevo_nodo->siguiente=Pila;
 
     //ahora asignamos el nuevo nodo a pila
     //lo hacemos porque, nuestra variable debe estar siempre señalando la cima
+    //representacion grafica: pila=[10]->siguiente->nullptr
     Pila=nuevo_nodo;
 
     cout<<"Elemento "<<n<<" agregado a la pila exitosamente"<<endl;

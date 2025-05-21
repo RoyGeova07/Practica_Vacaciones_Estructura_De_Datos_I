@@ -20,7 +20,7 @@ int main()
         posicion=i;//posicion sera mi flechita
         aux=numeros[i];
         //se comparara siempre y cuando posicion sea mayor que 0 y ademas si numeroizquierda es mayoir a numeroactual aux
-                            // numeros a us izquierda es mayor al numero actual
+                        // numeros a us izquierda es mayor al numero actual
         while ((posicion>0)&&(numeros[posicion-1]>aux))
         {
             

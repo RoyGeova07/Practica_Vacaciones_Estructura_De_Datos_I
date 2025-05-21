@@ -45,7 +45,7 @@ bool EsPalindromooo(Nodo*lista)
 
     Nodo*inicio=lista;
     Nodo*fin=lista->atras;
-
+    
     while(inicio!=fin&&inicio->siguiente!=fin)
     {
         

@@ -26,12 +26,14 @@ bool ColaVacia(Nodo *frente)
 void InsertarCola(Nodo *&frente, Nodo *&fin, int n)
 {
 
+    //nuevo_nodo->| |->null
     Nodo *nuevo_nodo=new Nodo();
 
     nuevo_nodo->dato=n;
     nuevo_nodo->siguiente=nullptr;
 
-    if(ColaVacia(frente)){
+    if(ColaVacia(frente))
+    {
 
         frente=nuevo_nodo;
 
